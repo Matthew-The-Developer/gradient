@@ -2,17 +2,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { GradientDirective } from './gradient.directive';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { GradientDirective } from './directives/gradient.directive';
+import { GradienttextDirective } from './directives/gradienttext.directive';
+
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GradientDirective
+    GradienttextDirective,
+    GradientDirective,
   ],
   imports: [
     BrowserModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+
+    MatGridListModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,18 +1,15 @@
-import { Directive, Input, ElementRef, OnChanges } from '@angular/core';
-
-export interface Gradient {
-  rotation: number;
-  colors: string[];
-}
+import { Directive, Input, ElementRef, OnChanges, Renderer2 } from '@angular/core';
+import { Gradient } from '../models/gradient.model';
 
 @Directive({
   // tslint:disable-next-line:directive-selector
   selector: '[gradient]'
 })
 export class GradientDirective implements OnChanges {
-  @Input() gradient: Gradient;
+  // tslint:disable-next-line:no-input-rename
+  @Input('gradient') gradient: Gradient;
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef, private render: Renderer2) { }
 
   ngOnChanges() {
     this.setBackground(`linear-gradient(${this.getGradient()})`);
