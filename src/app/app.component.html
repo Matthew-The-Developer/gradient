@@ -1,6 +1,6 @@
 <mat-grid-list [cols]="responsive.isMobile()? 1 : 2" [rowHeight]="!responsive.isDesktop()? '1:1' : '2:1'" gutterSize="0">
   <mat-grid-tile [colspan]="responsive.isMobile()? 1 : 2" rowspan="2">
-    <h1 *isDesktop>Angular <span [gradienttext]="angularMaterial">Gradient</span></h1>
+    <h1 *showItDevice="['desktop','tablet']">Angular <span [gradienttext]="angularMaterial">Gradient</span></h1>
     <h1 *showItDevice="['mobile','tablet']">Angular</h1>
     <h1 *showItDevice="['mobile','tablet']"><span [gradienttext]="angularMaterial">Gradient</span></h1>
 
