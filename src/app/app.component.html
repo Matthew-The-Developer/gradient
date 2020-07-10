@@ -1,7 +1,10 @@
-<mat-grid-list cols="2" rowHeight="2:1" gutterSize="0">
-  <mat-grid-tile colspan="2" rowspan="2">
-    <h1>Angular <span [gradienttext]="angularMaterial">Gradient</span></h1>
-    <p>Original credit to <a href="https://stackblitz.com/@beeman">@beeman</a> of stackblitz</p>
+<mat-grid-list [cols]="responsive.isMobile()? 1 : 2" [rowHeight]="!responsive.isDesktop()? '1:1' : '2:1'" gutterSize="0">
+  <mat-grid-tile [colspan]="responsive.isMobile()? 1 : 2" rowspan="2">
+    <h1 *!isMobile>Angular <span [gradienttext]="angularMaterial">Gradient</span></h1>
+    <h1 *showItDevice="['mobile','tablet']">Angular</h1>
+    <h1 *showItDevice="['mobile','tablet']"><span [gradienttext]="angularMaterial">Gradient</span></h1>
+
+    <p class="description">Original credit to <a href="https://stackblitz.com/@beeman">@beeman</a> of stackblitz, I just updated the directive<br *showItDevice="['desktop','tablet']"> for Angular 9.1.3 and expended it for text gradients. It's still pretty <br *showItDevice="['desktop','tablet']">unpolished, but let me know what you think.</p>
   </mat-grid-tile>
   
   <mat-grid-tile [gradient]="backgound">
@@ -37,5 +40,9 @@
         <p>Cards</p>
       </mat-card-content>
     </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <button [gradient]="button" mat-raised-button>Button</button>
   </mat-grid-tile>
 </mat-grid-list>

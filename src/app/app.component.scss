@@ -10,8 +10,12 @@ a {
     text-decoration: none;
 }
 
+.description {
+    text-align: center;
+}
+
 mat-card {
-    width: 35vw;
+    width: 50%;
     padding: 0;
 
     mat-card-header {

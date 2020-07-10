@@ -1,3 +1,4 @@
+import { ResponsiveModule, ResponsiveState } from 'ngx-responsive';
 import { Component, OnInit } from '@angular/core';
 import { Gradient } from './models/gradient.model';
 
@@ -8,6 +9,8 @@ import { Gradient } from './models/gradient.model';
 })
 export class AppComponent {
 
+  constructor(public responsive: ResponsiveState) { }
+
   angularMaterial: Gradient = { rotation: 0, colors: [ '#DD0031', '#3F51B5' ] };
   backgound: Gradient = { rotation: 0, colors: [ '#ff6e7f', '#bfe9ff' ] };
   multi: Gradient = { rotation: 0, colors: [ '#A770EF', '#CF8BF3', '#FDB99B' ] };
@@ -15,4 +18,5 @@ export class AppComponent {
   text: Gradient = { rotation: 0, colors: [ '#3CA55C', '#B5AC49' ] };
   icon: Gradient = { rotation: 0, colors: [ '#4CA1AF', '#C4E0E5' ] };
   toolbar: Gradient = { rotation: 90, colors: [ '#0B486B', '#F56217' ] };
+  button: Gradient = { rotation: 0, colors: [ '#cc5333', '#23074d' ] };
 }
